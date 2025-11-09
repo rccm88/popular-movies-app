@@ -18,6 +18,10 @@ export default function SubHeader({ title }: SubHeaderProps) {
           fontSize: "20px",
           lineHeight: "24px",
           letterSpacing: "0%",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+          maxWidth: "100%",
         }}
       >
         {title}

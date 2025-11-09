@@ -25,6 +25,7 @@ export default function RootLayout({
         style={{
           fontFamily: "var(--font-roboto), Roboto, sans-serif",
           backgroundColor: "#FFFFFF",
+          width: "100vw",
         }}
       >
         {children}

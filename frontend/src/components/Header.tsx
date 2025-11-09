@@ -4,24 +4,21 @@ import Link from "next/link";
 interface HeaderProps {
   readonly title: string;
   readonly showBackButton?: boolean;
-  readonly titleStyle?: {
-    readonly width?: string;
-    readonly height?: string;
-    readonly top?: string;
-    readonly left?: string;
-  };
 }
 
-export default function Header({
-  title,
-  showBackButton = false,
-  titleStyle = {
-    width: "106px",
-    height: "24px",
-    top: "20px",
-    left: "20px",
-  },
-}: HeaderProps) {
+export default function Header({ title, showBackButton = false }: HeaderProps) {
+  const titleStyle = showBackButton
+    ? {
+        height: "24px",
+        top: "20px",
+        left: "54px",
+      }
+    : {
+        width: "106px",
+        height: "24px",
+        top: "20px",
+        left: "20px",
+      };
   return (
     <header
       className="text-white w-full h-[64px] opacity-100 fixed top-0 left-0 z-10 relative"

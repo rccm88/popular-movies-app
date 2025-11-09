@@ -54,16 +54,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
   return (
     <>
-      <Header
-        title="Movie details"
-        showBackButton={true}
-        titleStyle={{
-          width: "121px",
-          height: "24px",
-          top: "20px",
-          left: "54px",
-        }}
-      />
+      <Header title="Movie details" showBackButton={true} />
 
       <SubHeader title={movie.title} />
 
