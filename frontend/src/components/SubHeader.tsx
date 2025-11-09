@@ -5,14 +5,9 @@ interface SubHeaderProps {
 export default function SubHeader({ title }: SubHeaderProps) {
   return (
     <div
-      className="py-4 px-4 fixed opacity-100 z-10"
+      className="w-full h-[56px] opacity-100 left-0 z-10 pt-4 pl-4"
       style={{
         backgroundColor: "#746A64",
-        width: "375px",
-        height: "56px",
-        top: "64px",
-        left: "0",
-        boxShadow: "0px 0px 4px 0px #0000001A",
       }}
     >
       <h2
@@ -23,11 +18,6 @@ export default function SubHeader({ title }: SubHeaderProps) {
           fontSize: "20px",
           lineHeight: "24px",
           letterSpacing: "0%",
-          width: "74px",
-          height: "24px",
-          top: "16px",
-          left: "16px",
-          color: "#FFFFFF",
         }}
       >
         {title}
@@ -35,4 +25,3 @@ export default function SubHeader({ title }: SubHeaderProps) {
     </div>
   );
 }
-

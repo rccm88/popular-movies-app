@@ -42,9 +42,10 @@ export default async function MoviePage({ params }: MoviePageProps) {
   }
 
   // Filter trailers from videos
-  const trailers = videos?.results.filter(
-    (video) => video.type === "Trailer" && video.site === "YouTube"
-  ) || [];
+  const trailers =
+    videos?.results.filter(
+      (video) => video.type === "Trailer" && video.site === "YouTube"
+    ) || [];
 
   // Format runtime
   const runtime = movie.runtime ? `${movie.runtime} mins` : "N/A";
@@ -52,7 +53,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
   const rating = movie.vote_average.toFixed(1);
 
   return (
-    <div className="min-h-screen bg-zinc-200 font-sans">
+    <>
       <Header
         title="Movie details"
         showBackButton={true}
@@ -66,86 +67,179 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
       <SubHeader title={movie.title} />
 
-      {/* Main Content */}
-      <main className="w-full absolute" style={{ top: "120px", left: "0", right: "0" }}>
+      <div className="min-h-screen bg-zinc-200 font-sans">
+        {/* Main Content */}
+        <main
+          className="w-full absolute"
+          style={{ top: "120px", left: "0", right: "0" }}
+        >
+          {/* Movie Poster and Details Block */}
+          <div className="bg-white w-full p-4">
+            <div className="flex gap-4">
+              {/* Movie Poster */}
+              {movie.poster_path && (
+                <div className="flex-shrink-0">
+                  <Image
+                    src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                    alt={movie.title}
+                    width={115}
+                    height={170}
+                    className="object-cover opacity-100"
+                    style={{
+                      width: "115px",
+                      height: "170px",
+                      borderRadius: "2px",
+                    }}
+                  />
+                </div>
+              )}
 
-        {/* Movie Poster and Details Block */}
-        <div className="bg-white w-full p-4">
-          <div className="flex gap-4">
-            {/* Movie Poster */}
-            {movie.poster_path && (
-              <div className="flex-shrink-0">
-                <Image
-                  src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                  alt={movie.title}
-                  width={300}
-                  height={450}
-                  className="rounded object-cover"
-                  style={{ width: "120px", height: "180px" }}
-                />
+              {/* Movie Metadata */}
+              <div className="flex-1 flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
+                  <p
+                    className="text-zinc-700"
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: 400,
+                      lineHeight: "24px",
+                      letterSpacing: "0%",
+                    }}
+                  >
+                    {releaseYear}
+                  </p>
+                  <p
+                    className="text-zinc-700 text-sm"
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 400,
+                      lineHeight: "24px",
+                      letterSpacing: "0%",
+                    }}
+                  >
+                    {runtime}
+                  </p>
+                  <p
+                    className="text-zinc-700 text-sm"
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      lineHeight: "24px",
+                      letterSpacing: "0%",
+                    }}
+                  >
+                    {rating}/10
+                  </p>
+                </div>
+                <button
+                  className="bg-zinc-800 text-white text-sm font-medium opacity-100"
+                  style={{
+                    width: "196px",
+                    height: "56px",
+                    borderRadius: "2px",
+                    backgroundColor: "#746A64",
+                  }}
+                >
+                  <p
+                    className="text-zinc-700 text-sm"
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      lineHeight: "24px",
+                      letterSpacing: "0%",
+                      alignItems: "center",
+                      color: "#FFFFFF",
+                    }}
+                  >
+                    Add to Favorite
+                  </p>
+                </button>
               </div>
-            )}
-
-            {/* Movie Metadata */}
-            <div className="flex-1 flex flex-col gap-2">
-              <div className="flex flex-col gap-1">
-                <p className="text-zinc-700 text-sm">{releaseYear}</p>
-                <p className="text-zinc-700 text-sm">{runtime}</p>
-                <p className="text-zinc-700 text-sm">{rating}/10</p>
-              </div>
-              <button className="bg-zinc-800 text-white px-4 py-2 rounded-md text-sm font-medium mt-2">
-                Add to Favorite
-              </button>
             </div>
           </div>
-        </div>
 
-        {/* Movie Description */}
-        <div className="bg-white w-full px-4 py-4">
-          <p className="text-zinc-700 text-sm leading-relaxed">{movie.overview}</p>
-        </div>
-
-        {/* Trailers Section */}
-        {trailers.length > 0 && (
+          {/* Movie Description */}
           <div className="bg-white w-full px-4 py-4">
-            <h3
-              className="text-zinc-900 text-lg font-bold mb-4 uppercase"
+            <p
+              className="text-zinc-700 text-sm leading-relaxed"
               style={{
-                fontFamily: "var(--font-roboto), Roboto, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                lineHeight: "24px",
+                letterSpacing: "0%",
+                color: "#757575",
               }}
             >
-              TRAILERS
-            </h3>
-            <div className="flex flex-col gap-3">
-              {trailers.slice(0, 2).map((trailer, index) => (
-                <button
-                  key={trailer.id}
-                  className="bg-zinc-200 hover:bg-zinc-300 px-4 py-3 rounded-md flex items-center gap-3 transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-full bg-white border-2 border-zinc-900 flex items-center justify-center flex-shrink-0">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6 4L12 8L6 12V4Z"
-                        fill="#000000"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-zinc-900 text-sm font-medium">
-                    Play trailer {index + 1}
-                  </span>
-                </button>
-              ))}
-            </div>
+              {movie.overview}
+            </p>
           </div>
-        )}
-      </main>
-    </div>
+
+          {/* Trailers Section */}
+          {trailers.length > 0 && (
+            <div className="bg-white w-full px-4 py-4">
+              <h3
+                className="text-zinc-900 text-lg font-bold uppercase"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  lineHeight: "24px",
+                  letterSpacing: "0%",
+                  color: "#757575",
+                }}
+              >
+                TRAILERS
+              </h3>
+              {/* Draw a line of 327px width 0 height and border 1px color #DEDEDE*/}
+              <div
+                style={{
+                  width: "327px",
+                  height: "0px",
+                  borderTop: "1px solid #DEDEDE",
+                  marginBottom: "16px",
+                  display: "block",
+                }}
+              ></div>
+
+              <div className="flex flex-col gap-3">
+                {trailers.slice(0, 2).map((trailer, index) => (
+                  <button
+                    key={trailer.id}
+                    className="px-4 py-3 rounded-md flex items-center gap-3 transition-colors"
+                    style={{
+                      backgroundColor: "#FAFAFA",
+                      height: "60px",
+                      width: "327px",
+                    }}
+                  >
+                    <div className="flex items-center justify-center flex-shrink-0">
+                      <Image
+                        src="/play-circle.png"
+                        alt="Play"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                        color="#746A64"
+                      />
+                    </div>
+                    <span
+                      className="text-zinc-900 text-sm font-medium"
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        lineHeight: "24px",
+                        letterSpacing: "2%",
+                        color: "#757575",
+                      }}
+                    >
+                      Play trailer {index + 1}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </main>
+      </div>
+    </>
   );
 }
-
