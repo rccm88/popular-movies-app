@@ -2,7 +2,7 @@ import { getPopularMovies } from "@/lib/api";
 import { Movie } from "@/types/movie";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/Header";
+import Header from "@/components/common/Header";
 
 export default async function Home() {
   let movies: Movie[] = [];
