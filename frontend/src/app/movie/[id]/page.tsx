@@ -61,8 +61,13 @@ export default async function MoviePage({ params }: MoviePageProps) {
       <div style={{ backgroundColor: "#FFFFFF" }}>
         {/* Main Content */}
         <main
-          className="w-full absolute p-5"
-          style={{ top: "120px", left: "0", right: "0" }}
+          className="w-full absolute"
+          style={{
+            top: "120px",
+            left: "0",
+            right: "0",
+            padding: "0 24px",
+          }}
         >
           {/* Movie Poster and Details Block */}
           <div className="bg-white w-full">
