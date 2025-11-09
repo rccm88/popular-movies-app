@@ -61,11 +61,11 @@ export default async function MoviePage({ params }: MoviePageProps) {
       <div style={{ backgroundColor: "#FFFFFF" }}>
         {/* Main Content */}
         <main
-          className="w-full absolute"
+          className="w-full absolute p-5"
           style={{ top: "120px", left: "0", right: "0" }}
         >
           {/* Movie Poster and Details Block */}
-          <div className="bg-white w-full p-4">
+          <div className="bg-white w-full">
             <div className="flex gap-4">
               {/* Movie Poster */}
               {movie.poster_path && (
@@ -153,7 +153,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
           </div>
 
           {/* Movie Description */}
-          <div className="bg-white w-full px-4 py-4">
+          <div className="bg-white w-full py-4">
             <p
               className="text-zinc-700 text-sm leading-relaxed"
               style={{
@@ -170,7 +170,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
           {/* Trailers Section */}
           {trailers.length > 0 && (
-            <div className="bg-white w-full px-4 py-4">
+            <div className="bg-white w-full py-4">
               <h3
                 className="text-zinc-900 text-lg font-bold uppercase"
                 style={{
@@ -202,7 +202,6 @@ export default async function MoviePage({ params }: MoviePageProps) {
                     style={{
                       backgroundColor: "#FAFAFA",
                       height: "60px",
-                      width: "327px",
                     }}
                   >
                     <div className="flex items-center justify-center flex-shrink-0">
