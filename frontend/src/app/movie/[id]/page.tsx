@@ -95,7 +95,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
               )}
 
               {/* Movie Metadata */}
-              <div className="flex-1 flex flex-col gap-2">
+              <div className="flex-1 flex flex-col justify-between">
                 <div className="flex flex-col gap-1">
                   <p
                     className="text-zinc-700"
@@ -119,6 +119,8 @@ export default async function MoviePage({ params }: MoviePageProps) {
                   >
                     {runtime}
                   </p>
+                </div>
+                <div>
                   <p
                     className="text-zinc-700 text-sm"
                     style={{
@@ -126,34 +128,35 @@ export default async function MoviePage({ params }: MoviePageProps) {
                       fontWeight: 700,
                       lineHeight: "24px",
                       letterSpacing: "0%",
+                      paddingBottom: "16px",
                     }}
                   >
                     {rating}/10
                   </p>
-                </div>
-                <button
-                  className="bg-zinc-800 text-white text-sm font-medium opacity-100"
-                  style={{
-                    width: "196px",
-                    height: "56px",
-                    borderRadius: "2px",
-                    backgroundColor: "#746A64",
-                  }}
-                >
-                  <p
-                    className="text-zinc-700 text-sm"
+                  <button
+                    className="bg-zinc-800 text-white text-sm font-medium opacity-100"
                     style={{
-                      fontSize: "16px",
-                      fontWeight: 500,
-                      lineHeight: "24px",
-                      letterSpacing: "0%",
-                      alignItems: "center",
-                      color: "#FFFFFF",
+                      width: "196px",
+                      height: "56px",
+                      borderRadius: "2px",
+                      backgroundColor: "#746A64",
                     }}
                   >
-                    Add to Favorite
-                  </p>
-                </button>
+                    <p
+                      className="text-zinc-700 text-sm"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: 500,
+                        lineHeight: "24px",
+                        letterSpacing: "0%",
+                        alignItems: "center",
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      Add to Favorite
+                    </p>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
