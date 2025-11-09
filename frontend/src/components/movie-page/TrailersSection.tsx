@@ -34,7 +34,7 @@ export default function TrailersSection({ trailers }: TrailersProps) {
         }}
       ></div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col">
         {trailers.slice(0, 2).map((trailer, index) => (
           <button
             key={trailer.id}
@@ -43,6 +43,7 @@ export default function TrailersSection({ trailers }: TrailersProps) {
               backgroundColor: "#FAFAFA",
               height: "60px",
               padding: "16px",
+              marginBottom: "8px",
             }}
           >
             <div
