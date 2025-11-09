@@ -6,7 +6,7 @@ export default function DescriptionSection({
   overview,
 }: MovieDescriptionSectionProps) {
   return (
-    <div className="bg-white w-full py-4">
+    <div className="bg-white w-full pt-5">
       <p
         className="text-zinc-700 text-sm leading-relaxed"
         style={{

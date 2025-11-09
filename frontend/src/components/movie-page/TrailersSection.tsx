@@ -11,7 +11,7 @@ export default function TrailersSection({ trailers }: TrailersProps) {
   }
 
   return (
-    <div className="bg-white w-full py-4">
+    <div className="bg-white w-full pt-5">
       <h3
         className="text-zinc-900 text-lg font-bold uppercase"
         style={{
