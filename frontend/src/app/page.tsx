@@ -1,7 +1,6 @@
 import { getPopularMovies } from "@/lib/api";
 import { Movie } from "@/types/movie";
 import Image from "next/image";
-import { HiDotsVertical } from "react-icons/hi";
 
 export default async function Home() {
   let movies: Movie[] = [];
@@ -35,8 +34,22 @@ export default async function Home() {
         >
           Pop Movies
         </h1>
-        <button className="flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2">
-          <HiDotsVertical className="text-white text-xl" />
+        <button
+          className="flex items-center justify-center absolute opacity-100"
+          style={{
+            width: "28px",
+            height: "28px",
+            top: "18px",
+            left: "329px",
+          }}
+        >
+          <Image
+            src="/more-vertical.svg"
+            alt="More options"
+            width={28}
+            height={28}
+            className="opacity-100"
+          />
         </button>
       </header>
 
