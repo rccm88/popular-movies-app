@@ -38,13 +38,17 @@ export default function TrailersSection({ trailers }: TrailersProps) {
         {trailers.slice(0, 2).map((trailer, index) => (
           <button
             key={trailer.id}
-            className="px-4 py-3 rounded-md flex items-center gap-3 transition-colors"
+            className="rounded-md flex items-center transition-colors"
             style={{
               backgroundColor: "#FAFAFA",
               height: "60px",
+              padding: "16px",
             }}
           >
-            <div className="flex items-center justify-center flex-shrink-0">
+            <div
+              className="flex items-center justify-center flex-shrink-0"
+              style={{ width: "28px", height: "28px", position: "relative" }}
+            >
               <Image
                 src="/play-circle.png"
                 alt="Play"
@@ -62,6 +66,7 @@ export default function TrailersSection({ trailers }: TrailersProps) {
                 lineHeight: "24px",
                 letterSpacing: "2%",
                 color: "#757575",
+                paddingLeft: "16px",
               }}
             >
               Play trailer {index + 1}
