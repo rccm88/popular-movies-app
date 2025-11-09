@@ -36,7 +36,7 @@ export default function MoviesList({ movies, error }: MoviesListProps) {
                     }}
                   >
                     <Image
-                      src={getTmdbImageUrl(movie.poster_path, "w185")}
+                      src={getTmdbImageUrl(movie.poster_path, "w342")}
                       alt={movie.title}
                       width={188.31175231933594}
                       height={279.462646484375}
