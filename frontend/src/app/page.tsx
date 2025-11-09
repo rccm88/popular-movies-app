@@ -40,7 +40,7 @@ export default async function Home() {
             width: "28px",
             height: "28px",
             top: "18px",
-            left: "329px",
+            right: "18px",
           }}
         >
           <Image
