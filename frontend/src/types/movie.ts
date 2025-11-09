@@ -15,3 +15,22 @@ export interface MoviesResponse {
   total_results: number;
 }
 
+export interface MovieDetails extends Movie {
+  runtime: number;
+  genres: Array<{ id: number; name: string }>;
+  production_companies: Array<{ id: number; name: string }>;
+}
+
+export interface Video {
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+}
+
+export interface VideosResponse {
+  id: number;
+  results: Video[];
+}
+

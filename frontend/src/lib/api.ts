@@ -44,3 +44,45 @@ export async function getTopRatedMovies(): Promise<MoviesResponse> {
   return response.json();
 }
 
+export async function getMovieDetails(movieId: number) {
+  const apiKey = process.env.THE_MOVIE_DB_API_KEY;
+  
+  if (!apiKey) {
+    throw new Error('THE_MOVIE_DB_API_KEY is not set');
+  }
+
+  const response = await fetch(
+    `${API_BASE_URL}/movie/${movieId}?api_key=${apiKey}`,
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch movie details');
+  }
+
+  return response.json();
+}
+
+export async function getMovieVideos(movieId: number) {
+  const apiKey = process.env.THE_MOVIE_DB_API_KEY;
+  
+  if (!apiKey) {
+    throw new Error('THE_MOVIE_DB_API_KEY is not set');
+  }
+
+  const response = await fetch(
+    `${API_BASE_URL}/movie/${movieId}/videos?api_key=${apiKey}`,
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch movie videos');
+  }
+
+  return response.json();
+}
+
