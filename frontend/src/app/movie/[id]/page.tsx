@@ -66,7 +66,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
             top: "120px",
             left: "0",
             right: "0",
-            padding: "0 24px",
+            padding: "24px 24px",
           }}
         >
           {/* Movie Poster and Details Block */}
@@ -191,7 +191,6 @@ export default async function MoviePage({ params }: MoviePageProps) {
               {/* Draw a line of 327px width 0 height and border 1px color #DEDEDE*/}
               <div
                 style={{
-                  width: "327px",
                   height: "0px",
                   borderTop: "1px solid #DEDEDE",
                   marginBottom: "16px",
