@@ -67,7 +67,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
       <SubHeader title={movie.title} />
 
-      <div className="min-h-screen bg-zinc-200 font-sans">
+      <div style={{ backgroundColor: "#FFFFFF" }}>
         {/* Main Content */}
         <main
           className="w-full absolute"

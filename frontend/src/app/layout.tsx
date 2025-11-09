@@ -22,7 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${roboto.variable} antialiased`}
-        style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif" }}
+        style={{
+          fontFamily: "var(--font-roboto), Roboto, sans-serif",
+          backgroundColor: "#FFFFFF",
+        }}
       >
         {children}
       </body>
