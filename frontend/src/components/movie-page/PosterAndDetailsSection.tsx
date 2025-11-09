@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getTmdbImageUrl } from "@/lib/images";
 
 interface MoviePosterAndDetailsProps {
   readonly posterPath: string | null;
@@ -22,7 +23,7 @@ export default function PosterAndDetailsSection({
         {posterPath && (
           <div className="flex-shrink-0">
             <Image
-              src={`https://image.tmdb.org/t/p/w300${posterPath}`}
+              src={getTmdbImageUrl(posterPath, "w185")}
               alt={title}
               width={115}
               height={170}
