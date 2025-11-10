@@ -1,2 +1,9 @@
 .vercel
 frontend/data/
+
+# cursor files
+.cursor
+.cursorrules
+.cursorignore
+.cursorignorerules
+.cursorignorerules
