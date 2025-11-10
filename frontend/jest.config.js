@@ -30,6 +30,8 @@ const customJestConfig = {
     '/node_modules/',
     '/.next/',
     '/__tests__/mocks/',
+    '/__tests__/test-utils.tsx',
+    '\\.d\\.ts$',
   ],
 }
 

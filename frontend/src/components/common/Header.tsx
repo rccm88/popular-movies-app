@@ -64,8 +64,8 @@ export default function Header({ title, showBackButton = false }: HeaderProps) {
 
   return (
     <header
-      className="text-white w-full h-[64px] opacity-100 fixed top-0 left-0 z-10 relative"
-      style={{ backgroundColor: "#212121" }}
+      className="text-white w-full opacity-100 fixed top-0 left-0 z-10 relative"
+      style={{ backgroundColor: "#212121", height: "64px" }}
     >
       {showBackButton && (
         <Link
