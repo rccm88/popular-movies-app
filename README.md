@@ -17,19 +17,19 @@ A modern Next.js application that displays popular movies from The Movie Databas
 
 Browse through popular movies in a beautiful grid layout.
 
-![Home Page](screenshots/home-page.png)
+<img src="screenshots/home-page.png" alt="Home Page" width="400" />
 
 ### Movie Details Page
 
 View detailed information about each movie, including synopsis, ratings, and trailers.
 
-![Movie Details Page](screenshots/movie-details.png)
+<img src="screenshots/movie-details.png" alt="Movie Details Page" width="400" />
 
 ### Favorites Page
 
 Manage your favorite movies collection.
 
-![Favorites Page](screenshots/favorites-page.png)
+<img src="screenshots/favorites-page.png" alt="Favorites Page" width="400" />
 
 ## Prerequisites
 
