@@ -72,11 +72,13 @@ export default async function MoviePage({ params }: MoviePageProps) {
         >
           {/* Movie Poster and Details Block */}
           <MoviePosterAndDetails
+            movieId={movie.id}
             posterPath={movie.poster_path}
             title={movie.title}
             releaseYear={releaseYear}
             runtime={runtime}
             rating={rating}
+            releaseDate={movie.release_date}
           />
 
           {/* Movie Description */}
