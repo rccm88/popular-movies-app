@@ -13,5 +13,9 @@ export function getTmdbImageUrl(
   if (!posterPath) {
     return "";
   }
-  return `${TMDB_IMAGE_BASE_URL}/${size}${posterPath}`;
+  // Ensure poster path starts with a leading slash
+  const normalizedPath = posterPath.startsWith("/")
+    ? posterPath
+    : `/${posterPath}`;
+  return `${TMDB_IMAGE_BASE_URL}/${size}${normalizedPath}`;
 }
