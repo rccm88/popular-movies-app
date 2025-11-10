@@ -11,6 +11,26 @@ A modern Next.js application that displays popular movies from The Movie Databas
 - 📝 Detailed movie information (runtime, rating, release date, overview)
 - 🖼️ High-quality movie posters
 
+## Screenshots
+
+### Home Page
+
+Browse through popular movies in a beautiful grid layout.
+
+![Home Page](screenshots/home-page.png)
+
+### Movie Details Page
+
+View detailed information about each movie, including synopsis, ratings, and trailers.
+
+![Movie Details Page](screenshots/movie-details.png)
+
+### Favorites Page
+
+Manage your favorite movies collection.
+
+![Favorites Page](screenshots/favorites-page.png)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
